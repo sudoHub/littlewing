@@ -1,0 +1,45 @@
+{
+	"name": "Node.js & TypeScript",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bullseye",
+	"features": {
+		"ghcr.io/devcontainers/features/node:1": {},
+		"ghcr.io/rocker-org/devcontainer-features/miniforge:1": {
+			"version": "latest",
+			"variant": "Mambaforge"
+		},
+		"ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {},
+		"ghcr.io/paul-gilber/devcontainer-features/buildah-apt-get:1": {},
+		"ghcr.io/devcontainers/features/docker-in-docker:2": {},
+		"ghcr.io/rocker-org/devcontainer-features/miniforge:2": {},
+		"ghcr.io/shyim/devcontainers-features/bun:0": {},
+		"ghcr.io/devcontainers-community/features/deno:1": {}
+	},
+	"customizations": {
+		"jetbrains": {
+			"settings": {
+				"Git4Idea:app:Git-Application-Settings.use_credential_helper": true,
+				"com.intellij:app:HttpConfigurable.use_proxy_pac": true
+			}
+		},
+		"vscode": {
+			"extensions": [
+				"Vue.volar",
+				"WallabyJs.console-ninja",
+				"esbenp.prettier-vscode",
+				"ms-kubernetes-tools.vscode-kubernetes-tools",
+				"donjayamanne.git-extension-pack",
+				"TabNine.tabnine-vscode"
+			]
+		}
+	},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [3000, 8000]
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "yarn install",
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	//"remoteUser": "bwest"
+}
